@@ -1,0 +1,55 @@
+#wrapper {
+background: url(/static/base/images/stranica.jpg) no-repeat center top;
+width: 100%;
+display: table;
+}
+#page {
+width: 924px;
+margin: 0 auto 0;
+border: solid 1px #ccc;
+/*height: 400px;*/
+}
+#header {
+height: 146px;
+padding-left: 600px;
+border: solid 1px #ccc;
+}
+
+#l_sidebar {
+background: blue;
+float: left;
+width: 188px;
+margin-right: 10px;
+margin-left: 70px;
+margin-top: 30px;
+line-height: 20px;
+display: inline;
+}
+#r_sidebar {
+float: left;
+width: 571px;
+margin-top: 20px;
+margin-bottom: 20px;
+line-height: 20px;
+display: inline;
+}
+#content-top {
+width: 571px;
+height: 26px;
+background: url(/static/base/images/von_kontent_top.png) no-repeat center top;
+}
+#content-bottom {
+width: 571px;
+height: 26px;
+background: url(/static/base/images/von_kontent_bot.png) no-repeat center top;
+}
+#content-middle {
+width: 571px;
+background: pink;
+}
+
+#content-middle > p {
+margin: 0px;
+}
+
+

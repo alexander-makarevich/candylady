@@ -1,0 +1,42 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Cork Board Example</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}base/css/clear.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}base/css/base.css">
+        {% render_block "css" %}
+    </head>
+    
+    <body>
+        {% cms_toolbar %}
+        <div id="wrapper">
+            <div id="page">
+                <div id="header">Это header</div>
+                <div id="l_sidebar">
+<div id="menubar">
+<ul id="menu">
+{% show_menu 0 0 0 0 %}
+</ul>
+</div>
+                </div>
+                <div id="r_sidebar">
+                    <!--<div>photo</div>-->
+                    <div id="content">
+                        <div id="content-top"></div>
+                        <div id="content-middle">
+                            <p>aaa</p>
+{% placeholder content %}
+                        </div>
+                        <div id="content-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% render_block "js" %}
+    </body>
+
+</html>
