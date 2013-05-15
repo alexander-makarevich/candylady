@@ -110,6 +110,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'candylady.urls'
@@ -124,6 +127,19 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, "templates"),
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.request',
+    'cms.context_processors.media',
+    'sekizai.context_processors.sekizai',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,6 +151,15 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+
+    'cms',
+    'mptt',
+    'menus',
+    'south',
+    'sekizai',
+
+    'cms.plugins.text',
+    'cms.plugins.picture',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -165,3 +190,7 @@ LOGGING = {
         },
     }
 }
+
+CMS_TEMPLATES = (
+    ('base.html', 'Base'),
+)
