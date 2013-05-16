@@ -1,0 +1,18 @@
+<table border="1">
+{% for lessons in lessons_by_day %}
+  {% for lesson in lessons %}
+  <tr>
+    {% if forloop.first %}
+      <td rowspan="{{ lessons|length }}">{{ lesson.day }}</td>
+    {% endif %}
+    <td>{{ lesson.start }}</td>
+    <td>{{ lesson.dance }}</td>
+    <td>{{ lesson.group }}</td>
+    <td>{{ lesson.teacher }}</td>
+    <td>{% if lesson.closed %}набор открыт{% else %}набор закрыт{% endif %}</td>
+  </tr>
+  {% endfor %}
+{% endfor %}
+</table>
+
+
