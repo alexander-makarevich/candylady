@@ -1,0 +1,37 @@
+{% load menu_tags %}
+{% for child in children %}
+{% if child.level == 0 and forloop.first %}
+<ul id="menu">
+{% endif %}
+{% if child.level == 0 and not forloop.last or child.level != 0 %}
+<li>
+	{% if child.children %}
+	<h1>{{ child.get_menu_title }}</h1>
+	<ul>
+		{% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+	</ul>
+	{% else %}
+		{% if child.level == 0 %}
+			{% if child.selected %}
+	<h1>{{ child.get_menu_title }}</h1>
+			{% else %}
+	<h1><a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a></h1>
+			{% endif %}
+		{% else %}
+			{% if child.selected %}
+	{{ child.get_menu_title }}
+			{% else %}
+	<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+			{% endif %}
+		{% endif %}
+	{% endif %}
+</li>
+{% endif %}
+
+{% if child.level == 0 and forloop.last %}
+</ul>
+<div class="last">
+<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+</div>
+{% endif %}
+{% endfor %}
