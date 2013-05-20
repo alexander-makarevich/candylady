@@ -48,8 +48,12 @@ lightbox = new Lightbox options
   LightboxOptions = (function() {
 
     function LightboxOptions() {
-      this.fileLoadingImage = 'images/loading.gif';
-      this.fileCloseImage = 'images/close.png';
+      this.fileLoadingImage = $('script[src$="/lightbox.js"]')
+        .attr('src')
+        .replace(/\/lightbox\.js$/, '/../images/loading.gif');
+      this.fileCloseImage = $('script[src$="/lightbox.js"]')
+        .attr('src')
+        .replace(/\/lightbox\.js$/, '/../images/close.png');
       this.resizeDuration = 700;
       this.fadeDuration = 500;
       this.labelImage = "Image";
