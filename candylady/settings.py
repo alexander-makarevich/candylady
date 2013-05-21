@@ -153,6 +153,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     'schedule',
+    'photogallery',
 
     'cms',
     'mptt',

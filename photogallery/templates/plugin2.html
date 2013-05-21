@@ -1,0 +1,9 @@
+<ul id="carousel" class="elastislide-list">
+{% for photo in photos %}
+	<li>
+		<a href="{{ photo.big.url }}" rel="lightbox">
+			<img src="{{ photo.small.url }}" alt="" />
+		</a>
+	</li>
+{% endfor %}
+</ul>
