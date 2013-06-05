@@ -4,15 +4,18 @@ from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 from django.utils.translation import ugettext as _
 from photogallery.models import Photo
+from photogallery.models import GalleryPluginModel
 
 class PhotoGalleryPlugin(CMSPluginBase):
-    model = CMSPlugin
+    model = GalleryPluginModel
     name = _("Photo Gallery Plugin")
     render_template = "plugin2.html"
 
     def render(self, context, instance, placeholder):
         context.update({
-            'photos': Photo.objects.all()
+#            'photos': Photo.objects.all(),
+            'photos': instance.associated_item.all(),
+            'instance': instance
         })
         return context
 
