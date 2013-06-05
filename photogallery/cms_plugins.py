@@ -13,8 +13,7 @@ class PhotoGalleryPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context.update({
-#            'photos': Photo.objects.all(),
-            'photos': instance.associated_item.all(),
+            'photos': Photo.objects.filter(tag=instance.tag),
             'instance': instance
         })
         return context
