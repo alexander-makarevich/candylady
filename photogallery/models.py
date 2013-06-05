@@ -12,6 +12,9 @@ class GalleryPluginModel(CMSPlugin):
             associated_item.plugin = self
             associated_item.save()
 
+    def __unicode__(self):
+        return self.title
+
 class Photo(models.Model):
     small = models.ImageField(upload_to='photogallery')
     big = models.ImageField(upload_to='photogallery')
