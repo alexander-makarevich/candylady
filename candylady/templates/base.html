@@ -5,7 +5,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Cork Board Example</title>
+        <title>{% page_attribute page_title %}</title>
+        <meta name="description" content="{% page_attribute meta_description %}"/>
+        <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
         <link rel="stylesheet" href="{{ STATIC_URL }}base/css/clear.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}base/css/base.css">
         {% render_block "css" %}

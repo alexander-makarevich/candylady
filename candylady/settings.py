@@ -197,3 +197,5 @@ LOGGING = {
 CMS_TEMPLATES = (
     ('base.html', 'Base'),
 )
+
+CMS_SEO_FIELDS = True
