@@ -1,0 +1,29 @@
+/* Custom Elastislide Styling */
+
+.elastislide-wrapper {
+    background-color: transparent;
+}
+
+
+.elastislide-wrapper nav span {
+	background-color: transparent;
+	background: none;
+	width: 34px;
+	height: 71px;
+	border-radius: 0 !important;
+}
+
+.elastislide-horizontal nav span {
+	margin-top: -35px;
+}
+
+.elastislide-horizontal nav span.elastislide-next {
+	background-position: 0 0;
+        background-image: url(/static/elastislide/images/strelka_vpravo.png);
+	right: -0px;
+}
+
+.elastislide-horizontal nav span.elastislide-prev {
+        background-image: url(/static/elastislide/images/strelka_vlevo.png);
+	left: 0px;
+}
